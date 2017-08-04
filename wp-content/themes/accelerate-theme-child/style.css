@@ -1,0 +1,148 @@
+/*
+ Theme Name:   Accelerate Theme Child
+ Theme URI:    http://example.com/accelerate-theme-child/
+ Description:  Accelerate Child Theme - Accelerate
+ Author:       Your Name!
+ Author URI:   http://example.com
+ Template:     accelerate-theme
+ Version:      2.0.0
+ Tags:         light, dark, two-columns, right-sidebar, responsive-layout, accessibility-ready
+ Text Domain:  accelerate-theme-child
+*/
+
+@import url("../accelerate-theme/style.css");
+
+.home-page {
+    background: url("img/taxi-photo.jpg") no-repeat scroll left center / cover rgba(0, 0, 0, 0);
+}
+
+#masthead {
+    background: none repeat scroll 0 0 #45ac9d;
+}
+
+.button {
+    background: none repeat scroll 0 0 #45ac9d;
+}
+
+#masthead nav ul li {
+	float: left;
+	margin: 0 10px;
+}
+
+.blog-post {
+	width: 50%;
+}
+
+.blog-post h4 {
+	color: #a6a6a6;
+	text-transform: uppercase;
+}
+
+.blog-post h2 {
+	font-size: 1.5em;
+}
+
+.read-more-link {
+	font-family: 'Montserrat';
+	font-weight: 700;
+	color: #45ac9d;
+	text-transform: uppercase;
+}
+
+/* Case Studies */
+
+article.case-study {
+	float: left;
+	margin: 40px 0 0;
+}
+
+aside.case-study-sidebar {
+	float: left;
+	width: 315px;
+	margin: 0 40px 0 0;
+}
+
+div.case-study-images {
+	float: right;
+	width: 600px;
+	margin: 15px 0 0 0;
+}
+
+div.case-study-images img {
+	display: block;
+	margin-bottom: 50px;
+	border: 1px solid #dddddd;	
+}
+
+h1,
+h2,
+h3,
+h5,
+h6 {
+   margin: 0 0em;
+}
+
+ h4 {
+  text-align: center;
+  text-transform: uppercase;
+}
+
+.blog-post h4{
+	text-align: left;
+}
+
+h5 {
+	font-size: 12px;
+    font-size: .75em;
+	color: gray;
+	text-transform: none;
+
+}
+
+h6 {
+	font-size: 12px;
+    font-size: .75em;
+    text-transform: none;
+}
+
+
+h3.case-work {
+	font-size: 12px;
+	color: #787878;
+	margin: 0 7em;
+}
+
+ul.homepage-featured-work {
+  list-style: none;
+ display: inline;
+ height: 800px;
+
+}
+
+.homepage-featured-work li {
+	float: left;
+	margin: 0 6px;
+}
+
+.main-content-contact{
+	margin: 0 150px;
+}
+
+#nf-field-1-container {
+	float: left;
+	width: 315px; /** Name **/
+}
+
+#nf-field-2-container {
+	float: right;
+	width: 315px; /** Email **/
+}
+
+#nf-field-3 {
+	height: 200px; /** Message **/
+}
+
+#nf-field-4 {
+	float: right;
+	width: 200px; /** Submit **/
+}
