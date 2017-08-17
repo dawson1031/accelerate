@@ -34,19 +34,112 @@ function create_custom_post_types() {
             ),
             'public' => true,
             'has_archive' => true,
-            'rewrite' => array( 'slug' => 'case-studies' ),
+            'rewrite' => array( 'slug' => 'case-studies', 'with_front' => false ),
         )
     );
+
+        register_post_type( 'about_us',
+        array(
+            'labels' => array(
+                'name' => __( 'About Us' ),
+                'singular_name' => __( 'About' )
+            ),
+            'public' => true,
+            'has_archive' => false,
+            'rewrite' => array( 'slug' => 'about'),
+        )
+    );
+
+        register_post_type( 'services',
+        array(
+            'labels' => array(
+                'name' => __( 'Services' ),
+                'singular_name' => __( 'Services' )
+            ),
+            'public' => true,
+            'has_archive' => true,
+            'rewrite' => array( 'slug' => 'services' ),
+        )
+    );
+
 }
+
+
 add_action( 'init', 'create_custom_post_types' );
 
-/*** Ninja Forns ***/
+class Excerpt {
 
-function YOUR_PREFIX_add_nf_styles( $form_id ) {
-    if( $form_id == 1 ) {
-        echo '<style>
-        .ninja-forms-form-wrap{background:red}
-        </style>';
-    }
+  // Default length (by WordPress)
+  public static $length = 55;
+
+  // So you can call: my_excerpt('short');
+  public static $types = array(
+      'short' => 25,
+      'regular' => 55,
+      'long' => 100
+    );
+
+  /**
+   * Sets the length for the excerpt,
+   * then it adds the WP filter
+   * And automatically calls the_excerpt();
+   *
+   * @param string $new_length 
+   * @return void
+   * @author Baylor Rae'
+   */
+  public static function length($new_length = 55) {
+    Excerpt::$length = $new_length;
+
+    add_filter('excerpt_length', 'Excerpt::new_length');
+
+    Excerpt::output();
+  }
+
+  // Tells WP the new length
+  public static function new_length() {
+    if( isset(Excerpt::$types[Excerpt::$length]) )
+      return Excerpt::$types[Excerpt::$length];
+    else
+      return Excerpt::$length;
+  }
+
+  // Echoes out the excerpt
+  public static function output() {
+    the_excerpt();
+  }
+
 }
-add_action ( 'ninja_forms_display_css', 'YOUR_PREFIX_add_nf_styles' );
+
+// An alias to the class
+function my_excerpt($length = 55) {
+  Excerpt::length($length);
+}
+
+
+// Add 'odd' and 'even' post classes
+function oddeven_post_class ( $classes ) {
+ global $current_class;
+ $classes[] = $current_class;
+$current_class = ($current_class == 'odd') ? 'even' : 'odd';
+ return $classes;
+}
+
+add_filter ( 'post_class' , 'oddeven_post_class' );
+global $current_class;
+ $current_class = 'odd';
+
+function accelerate_theme_child_widget_init() {
+    
+    register_sidebar( array(
+        'name' =>__( 'Homepage sidebar', 'accelerate-theme-child'),
+        'id' => 'sidebar-2',
+        'description' => __( 'Appears on the static front page template', 'accelerate-theme-child' ),
+        'before_widget' => '<aside id="%1$s" class="widget %2$s">',
+        'after_widget' => '</aside>',
+        'before_title' => '<h4 class="widget-title">',
+        'after_title' => '</h4>',
+    ) );
+    
+}
+add_action( 'widgets_init', 'accelerate_theme_child_widget_init' );

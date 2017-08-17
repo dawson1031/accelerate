@@ -62,10 +62,24 @@ get_header(); ?>
       <?php while ( have_posts() ) : the_post(); ?>
         <h2><?php the_title(); ?></h2>
         <?php the_excerpt(); ?> 
+
+
         <!--<a href="<?php the_permalink(); ?>" class="read-more-link">Read More! <span>-->
+
       <?php endwhile; // end of loop // ?> 
+
       <?php wp_reset_query(); // rests the altered query back to the original // ?>
-   </div>
+  </div>
+
+
+        <?php if ( is_active_sidebar( 'sidebar-2' ) ) : ?>
+          <div id="secondary" class="widget-area" role="complementary">
+            <?php dynamic_sidebar( 'sidebar-2' ); ?>
+          </div>
+          <?php endif; ?>
+
+
+
   </div>
 </section>
 

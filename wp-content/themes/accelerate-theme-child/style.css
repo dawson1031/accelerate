@@ -31,6 +31,7 @@
 
 .blog-post {
 	width: 50%;
+	display: inline-block;
 }
 
 .blog-post h4 {
@@ -74,6 +75,136 @@ div.case-study-images img {
 	border: 1px solid #dddddd;	
 }
 
+/* About Us */
+.about-hero {
+    background: url("img/taxi-photo.jpg") no-repeat scroll left center / cover rgba(0, 0, 0, 0);
+    height: 275px;
+    background-position: 0px -225px;
+}
+
+.site-content-about h2 {
+	color: #fff;
+	text-align: center;
+	padding: 50px 275px 0;
+	font-weight: normal;
+	line-height: 1.5em;
+}
+
+#aboutus p {
+	text-align: center;
+margin-bottom: 65px;
+}
+
+#aboutus h4 {
+  text-align: center;
+  text-transform: uppercase;
+  margin-top: 75px;
+}
+
+ #postID:nth-child(odd) {
+ 	min-height: 1%;
+	overflow: auto;
+	display: flex;
+	align-items: center;
+
+ }
+
+.about-us:nth-child(odd) aside {
+	width: 650px;
+	margin-left: 50px;
+}
+
+.about-us:nth-child(odd) img {
+    float: left;
+    margin-left: 25px;
+    height: 1%;
+	overflow: auto;
+	display: flex;
+	align-items: center;
+
+}
+
+
+.about-us:nth-child(even) aside{
+	width: 650px;
+	margin: 75px 0 75px 25px;
+
+} 
+
+.about-us:nth-child(even) img{
+    margin-left: 100px;
+    float: right;
+}
+  /** error 404 **/
+
+.page-header .error img{
+    margin-top: 50px;
+}
+
+.error {
+	margin-top: 50px;
+	margin-left: 50px;
+}
+
+.error h2 {
+	margin-top: -.5em;
+}
+
+.error a {
+	color: #45ac9d;
+	font-weight: bold;
+}
+
+
+/**#post-47388 .about-us-sidebar {
+	width: 650px;
+	float: right;
+	margin-left: 325px;
+}
+
+#post-47388 h2{
+	color: red;
+}
+
+#post-47388 img{
+	background:#f0f8ff;  
+	border: 1px solid red;	
+	float: left;
+    margin-top: -140px;
+    margin-left: 100px;
+} 
+
+#post-47417 .about-us-sidebar {
+	width: 650px;
+	float: right;
+	margin-left: 325px;
+}
+
+#post-47416 h2{
+	color: purple;
+}
+
+#post-47416 img{
+	background:#f0f8ff;  
+	border: 1px solid blue;	
+	float: right;
+} 
+
+#post-47416 .about-us-sidebar {
+	width: 650px;
+	float: left;
+	margin-top: 100px;
+	margin-left: 100px;
+}
+
+#post-47417 h2{
+	color: blue;
+}
+
+#post-47418 h2{
+	color: green;
+}**/
+
 h1,
 h2,
 h3,
@@ -89,6 +220,22 @@ h6 {
 
 .blog-post h4{
 	text-align: left;
+}
+
+#secondary {
+	float: right;
+	width: 50%;
+}
+
+#secondary  h4 {
+	text-align: left;
+	color: #a6a6a6;
+	text-transform: uppercase;
+}
+
+#secondary {
+	clear: both;
+	padding-left: 25px;
 }
 
 h5 {
@@ -128,6 +275,8 @@ ul.homepage-featured-work {
 	margin: 0 150px;
 }
 
+/** Ninja Forms **/
+
 #nf-field-1-container {
 	float: left;
 	width: 315px; /** Name **/
@@ -145,4 +294,12 @@ ul.homepage-featured-work {
 #nf-field-4 {
 	float: right;
 	width: 200px; /** Submit **/
+}
+
+.mc4wp-form-fields input[type=submit]{
+line-height: 40px
+}
+
+#primary-sidebar  {
+	width: 125%;
 }

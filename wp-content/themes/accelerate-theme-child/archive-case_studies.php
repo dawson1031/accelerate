@@ -28,7 +28,7 @@ get_header(); ?>
 
 					<?php the_excerpt(); ?>	
 
-					<p><strong><a href="<?php the_permalink(); ?>">View Project</a></p>
+					<p><strong><a href="<?php the_permalink(); ?>">View Project</a></strong></p>
 				</aside>
 				<div class="case-study-images">
 					<a href="<?php the_permalink(); ?>">
@@ -38,7 +38,7 @@ get_header(); ?>
 					</a>
 				</div>
 
-
+			</article>
 			<?php endwhile; // end of the loop. ?>
 		</div><!-- #content -->
 	</div><!-- #primary -->
